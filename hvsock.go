@@ -159,7 +159,6 @@ func (l *HvsockListener) Close() error {
 	return l.sock.Close()
 }
 
-/* Need to finish ConnectEx handling
 func DialHvsock(ctx context.Context, addr *HvsockAddr) (*HvsockConn, error) {
 	sock, err := newHvSocket()
 	if err != nil {
@@ -188,7 +187,6 @@ func DialHvsock(ctx context.Context, addr *HvsockAddr) (*HvsockConn, error) {
 	sock = nil
 	return conn, nil
 }
-*/
 
 func (conn *HvsockConn) opErr(op string, err error) error {
 	return &net.OpError{Op: op, Net: "hvsock", Source: &conn.local, Addr: &conn.remote, Err: err}
